@@ -1,0 +1,36 @@
+.footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: rgb(231, 180, 118);
+    border-top: 1px solid rgb(190, 175, 175);
+}
+
+
+
+.mxh_footer a {
+    font-size: 2rem;
+    margin: 10px;
+}
+.exp_footer {
+    width: 100%;
+    background-color: rgb(231, 180, 118);
+    color: #fff;
+}
+.exp_footer div{
+    display: flex;
+    width: 50%;
+    margin: auto;
+    height: auto;
+    padding-top: 1em;
+    justify-content: space-around;
+}
+.info_footer p{
+    color: #000;
+}
+@media only screen and (max-width: 700px) {
+    .exp_footer div{
+        width: 100%;
+    }
+}

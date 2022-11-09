@@ -1,0 +1,245 @@
+.content4{
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box; 
+     text-align: center;
+     background-color: #fff;
+      padding-top:4rem;
+      padding-bottom:4rem;
+      opacity: 1;
+}
+
+.content4_collapse{
+    width: 80%;
+    height: auto;
+    margin: auto;
+   
+}
+
+.text_service{
+    position: relative;
+    text-align: center;
+   
+}
+.text_service p{
+    font-family: "Montserrat", sans-serif;
+    color:#6a6a6a;
+}
+.text_service h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+.text_service::after{
+   content: "";
+    width: 100px;
+    height: 5px;
+    display: block;
+    background-color: rgb(236, 152, 48);
+    margin: auto;
+    border-radius: 10px;
+  
+}
+.content4_list .content4_ul{
+    display: flex;
+    justify-content: center;
+    margin-top:2rem ;
+    padding: 0; 
+}
+.content4_ul .content4_li{
+    
+    width: auto;
+    height: auto;
+    padding: 0px ;
+    margin: 0px;
+    border: 1px solid rgb(194, 186, 186);
+    box-sizing: border-box;
+    overflow: hidden;  
+   
+}
+.content4_li a{
+   
+    height: auto;
+    width: 25%;
+    padding: 1em 2em 1em 2em;  
+    line-height: 3em;
+  font-weight: 400;
+  color: #000;
+}
+.content4_li a:hover{
+    background-color: bisque;
+    color: rgb(231, 117, 117);
+}
+.tag_service{
+    display: flex;
+    border: 1px solid rgb(197, 192, 192);
+    box-sizing: border-box;
+    transform: scale(0.8);
+    transition: 2s;
+  
+}
+.tag_service_left{
+    width: 50%;
+    height: 600px;
+    max-height: 700px;
+
+}
+.tag_service_left img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    transition: 2s;
+    
+}
+.tag_service:hover{
+    transform: scale(0.9);
+    transition: 2s;
+}
+.tag_service img:hover,.tag_service_right:hover{
+    transform:scale(1.1);
+   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    transition: 1s;   
+    z-index: 2; 
+}
+.tag_service_right{
+    width: 50%;
+    height: auto;
+    background-color: #000;
+    color:#fff;
+    text-align: start;
+    transition: 1s;
+    padding-left: 2em;
+    
+}
+.tag_service_right button{
+    height: 3em;
+    width: 10em;
+    font-weight: 600;
+    background-color: #c5a46d;
+    color: #fff;
+}
+.tag_service_right button:hover{
+    background: #fff;
+    color: #000;
+}
+.tag_service_right p {
+    font-family: "Montserrat", sans-serif;
+}
+
+.tag_service_right .h1_content4{
+    color:#c5a46d ;
+}
+
+
+.hide_content4_img{
+    position: absolute;
+    left: -500%;
+    
+}
+.bg_btn_content4{
+    background-color:bisque ;
+}
+@media only screen and (max-width: 900px){
+    
+    .content4_ul{
+        flex-direction: column;
+        width: 100%;
+       
+    }   
+    .content4_ul .content4_li{
+    
+        width: 80%;
+        margin:  auto;
+        height: auto;
+    }
+    .content4_li a{
+       padding-left: 30%;
+       padding-right: 30%;
+    }
+    .tag_service{
+        display: inline-block;
+        border: none;
+        width: 100%;
+        height: auto;
+    }
+    .tag_service_left{
+       width: 100%;
+       height: auto;
+       float: left;
+    }
+    .tag_service_right{
+        width: 100%;
+        height: auto;
+        float: right;
+        background-color: transparent;
+        color: black;
+       
+    }
+    .tag_service_right h4{
+      padding-top: 1em;
+    }
+    
+}
+.scrol_ani_content4{
+    animation-name: quaphai;
+    animation-duration: 2s;
+}
+
+@keyframes quaphai {
+    0%{ transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.leftto_content4{
+animation-name: lefttoct4;
+animation-duration: 3s;
+opacity: 1;
+
+}
+.rightto_content4{
+animation-name: righttoct4;
+animation-duration: 3s;
+opacity: 1;
+}
+.bottomto_content4{
+    animation-name: bottomtoct4;
+    animation-duration: 2s;
+    opacity: 1;
+}
+
+@keyframes lefttoct4 {
+    0%{ opacity: 0;
+            transform: translateX(-100%)
+    };
+    100%{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+@keyframes righttoct4 {
+    0%{ opacity: 0;
+        transform: translateX(100%)
+
+    };
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes bottomtoct4 {
+    0%{ 
+        transform: translateY(-100%);
+         opacity: 0;
+    }
+;
+100%{
+    opacity: 1;
+    transform: translateY(100%)
+}
+}

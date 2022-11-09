@@ -1,0 +1,96 @@
+.content5{
+    width: 100%;
+    height: auto;
+    padding:2rem 0 2rem 0;
+    background-color:  #fed9b7;
+    opacity: 0;
+    transition: 2s;
+}
+.show_content5{
+    opacity: 1;
+}
+.content5_80{
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+.text_content5{
+    text-align: center;
+
+}
+.text_content5 h3{
+    font-family: 'Times New Roman', Times, serif;
+}
+.list_content5{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+    
+}
+.item_content5{
+    width: 30%;
+    height: 12rem;
+    padding: 1em;
+    border: 1px #828282  solid;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    margin-top: 2em ;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+   
+}
+
+
+.item_content5 i{
+    font-size: 50px;
+    color: rgb(226, 157, 72);
+}
+.item_content5 p{
+    color: #828282;
+}
+@media only screen and (max-width: 700px) {
+    .item_content5{
+        width: 100%;
+    }
+}
+
+.scrol_ani_content5{
+    animation-name: anilen;
+    animation-duration: 5s;
+}
+@keyframes anilen {
+    0%{
+        transform: translateY(70%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+.gachchanct5{
+    height: 3px;
+    width: 20%;
+    background-color: rgb(201, 148, 78);
+    margin: auto;
+    border-radius: 10px;
+}
+
+
+.bottom_to_content5{
+    animation-name: bottom5to;
+    animation-duration: 3s;
+}
+
+
+@keyframes bottom5to {
+    0%{ opacity: 0;
+        transform: translateY(100%);
+    }   
+    100%{ opacity: 1;
+        transform: translateX(0);
+    }
+}

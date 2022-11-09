@@ -1,0 +1,288 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;  
+  
+}
+a{
+    text-decoration: none;
+   
+}
+.header{
+   
+    width: 100%;
+    height: 8vh;
+    z-index: 10;
+    display: flex;
+    padding: 5px 0px 5px 0px;
+    transition: 1s;
+    background-color: transparent ;
+    position: fixed;
+}
+.scroll_header{
+    background-color: #fed9b7;
+    padding: 0px 0px 0px 0px;
+    opacity: 0.8;
+    
+}
+
+.scroll_bg_header{
+    background-color: #fff;
+    position: fixed;
+    opacity: 0.7;
+    padding: 0px;
+    transition: 3s;
+}
+.scrool_gb_menu{
+    color: black;
+    transition: 1s;
+}
+.logo{
+    width: 30%;
+    height:9vh;
+    text-align: center;
+}
+.logo img{
+    height: 8vh;
+    text-align: center;
+    
+}
+.menu{
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+.menu ul{
+    margin: 0px;
+    justify-content: space-around;
+    display: flex;
+
+}
+
+.menu .menu_itemli{
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+
+}
+.menu .menu_itemli:hover{
+    color: #fff;
+    transition: 1s;
+}
+
+/* tog li a sang phai */
+.tog_li_a{
+    margin-left: 10px;
+    
+}
+
+.datphong{
+    border: 1px solid #d9d9d9;
+    padding: 1em 2em 1em 2em;
+    border-radius: 10px;
+    background-color: #f7c59f;
+    animation-name: anidatphong;
+    animation-duration: 3s;
+    animation-iteration-count:infinite;
+}
+.datphong:hover{
+    background-color: #fff;
+    counter-reset: black;
+}
+
+.button_menu a{
+    color: black;
+  
+}
+
+@keyframes anidatphong {
+    0%{
+        background-color: #ffb4a2;
+    }
+    30%{
+       
+        background-color: #bdb2ff;
+    }
+    70%{
+        background-color: #84a98c;
+    }
+    100%{
+       
+        background-color: #a2d2ff;        
+    }
+}
+#dichvu_ul{
+    position: absolute;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid #d9d9d9;
+    border-top:none ;
+    padding: 1em 1em 1em 1em;
+    border-radius: 10px;
+    margin-top: 1em;
+    background-color:#fed9b7;
+}
+#dichvu_ul .dichvu_li{
+    padding: 5px;
+   
+}
+#dichvu_ul .dichvu_li:hover{
+    transform: translateX(20%);
+    transition: 1s;
+}
+
+.dichvu_li_gym{
+    color: #967aa1;
+    
+}
+.dichvu_li_gym:hover{
+    color: #7e4c94;
+    text-decoration:underline;
+     transition: 1s;
+}
+.dichvu_li_pool{
+    color: #00a6fb;
+    
+}
+.dichvu_li_pool:hover{
+    color: #016292;
+    text-decoration:underline;
+
+    transition: 1s;
+}
+.dichvu_li_cafe{
+    color: #bb4d00;
+}
+.dichvu_li_cafe:hover{
+    color: #552502;
+    text-decoration:underline;
+     transition: 1s;
+
+}
+.hide_tog_dichvu{
+    top: -100rem;
+}
+#tog_dichvu_id p {
+    display: inline;
+    position: relative;
+    bottom: 4px;
+   
+}
+@media only screen and (min-width: 900px){
+    .logo button{
+        display: none;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .display_none1{
+        top: 0; 
+        position: relative;
+        width: 100%;
+        transition: 2s;
+   }
+    .header {
+        display: block;
+        height: auto;
+        padding: 0px;
+        overflow: initial;
+        
+   }
+   .header #btn_hd:hover{
+        background-color: rgb(230, 176, 111);
+        color: #fff;
+    }
+    .logo{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        
+        
+    }
+   
+    #button_menu{
+        margin-right: 2em;
+        margin-top: auto;
+        margin-bottom: auto;
+        height: 3em;
+        width: 4em;
+        background-color: rgb(230, 176, 111);
+        border: 1px solid #fff;
+        border-radius:10px;
+        font-size: 14px;
+    }
+    #button_menu a{
+        color: black;
+    }
+    #button_menu:hover{
+        background-color: #fff;
+    }
+    #button_menu a:hover{
+        color:#f7c59f ;
+        
+    }
+    .menu{
+        width: 100%;
+        padding: 0px;
+        padding: 0px;
+        
+    }
+    #menu_ul {
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        text-align: center; 
+        background-color: #f7c59f;
+        transition: 2s;
+      
+    }
+    .hide_menu{
+        left: -100rem;
+        transition: 2s;
+    }
+    #menu_ul li{
+        width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background-color: #fff;
+        opacity: 0.7;
+        
+    }
+    .menu ul li .menu_itemli{
+      color: #000;
+    }
+    .tog_ul{
+        display: none;
+    }
+    #dichvu_ul{
+        width: 100%;
+        transform: translateY(75%);
+        padding: 0;
+        margin: 0;
+      
+    }
+
+
+}   
+.manage_room{
+    background-color: #bde0fe;
+    border-radius: 10px;
+    height: 6vh;
+    position: fixed;
+    font-weight: 700;
+    bottom: 0;
+    right: 0;
+    color: #000;
+}
+    
+.manage_room:hover{
+    background-color: #fed9b7;
+    caret-color: #000;
+}
+.manage_room p{
+    margin-top: 2vh
+}

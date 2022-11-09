@@ -1,0 +1,45 @@
+
+.tab_client{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+.img_room_client{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    border-radius: 10px;
+   
+    transition: 2s;
+    
+}
+.tab_client:hover .img_room_client{
+    transform:scale(1.2);
+    transition: 2s;
+}
+.title_client{
+    position: absolute;
+     color: #fff;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.title_client h4{
+    
+    padding-bottom: 1em;
+}
+.status_st{
+    position: absolute;
+    font-size: 1em;
+    width: 100%;
+    background-color: rgb(117, 173, 238);
+}
+
+.stt_gray{
+    background-color: rgb(209, 116, 116);
+}

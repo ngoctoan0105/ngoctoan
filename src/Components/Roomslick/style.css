@@ -1,0 +1,110 @@
+
+.parent_room{
+    width: 100%;
+    background-color:#fed9b7;
+    padding-top: 6rem;
+    padding-bottom:6rem;
+}
+.room{
+    position: relative;
+    height: auto;
+   
+    width: 80%;
+    margin: auto;
+}
+.room h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+.room h3{
+    padding-top: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    color: #fff;
+}
+.classslick{
+    width: 100%;
+    height: auto;
+    padding-right: 1em;
+    background-size: cover;
+    object-fit: fill;
+}
+.children_room{
+    position: relative;
+}
+.products_item{
+    width: 100%;
+    position: absolute;
+    bottom:-4em;
+    left: 1rem;
+    color:white; 
+    transition: 1s;
+    opacity: 0.8;
+}
+.children_room:hover .products_item{
+    transform: translatey(-4em);
+    opacity: 1;
+}
+
+.products_item hr{
+    position: relative;
+    transform: translateX(-40%);
+}
+
+.products_item .flex-item{
+    display: flex;
+    padding: 0;
+    font-size: 20px;
+}
+.xemthem{
+    margin: auto;
+}
+.xemthem a{
+    margin: auto;
+    font-weight: 500;
+    color: #fff;
+    padding-right: 4px;
+}
+
+.products_item h5{
+    position: relative;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+.products_item h6{
+    position: relative;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    display: inline;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  
+}
+.thembt{
+    bottom:0px;
+}
+
+.product_awe{
+ display: flex;   
+ justify-content: space-between;
+ height: 10%;
+ padding-top: 1em;
+}
+
+.products_awe ul{
+    display: flex;
+   margin: 0px;
+   padding: 0px;
+}
+.products_awe ul  {
+   margin: 0px;
+}
+.products_awe a,.products_awe i{
+margin-top: auto;
+margin-bottom: auto;
+}

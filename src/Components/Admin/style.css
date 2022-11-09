@@ -1,0 +1,152 @@
+.title_quanly{
+    position: relative;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    height: auto;
+    padding-bottom: 3em;
+    background-color:red;
+   
+    
+}
+.gc_quanly{
+    width: 15%;
+    height:5px;
+    background-color: #dda15e;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 2em;
+}
+.title_admin{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+.hours_admin,.date_admin{
+    background-color: pink;
+    position: relative;
+    display: block;
+    width: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 1em 8px 1em;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.hours_admin{
+    width: 10%;
+}
+.hours_admin p, .date_admin p{
+    font-weight:700;
+    font-size: 2em;
+}
+.list_user{
+    display: flex;
+    width: 90%;
+    background-color:#f5ebe0;
+    margin: auto;
+    width: 90%;
+    padding: 1em;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.imgbn_admin{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+}
+.logo_admin{
+    text-align: center;
+    z-index: 10;
+}
+.user_item{
+    position: relative;
+    width: 20%;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    margin: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+.trangthai_admin{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #489ceb;
+}
+.trangthai_admin2{
+    color: red;
+   
+}
+.btn_admin_check{
+    background-color: #489ceb;
+    margin: 5px;
+    border-radius: 10px;
+}
+.form_data_admin{
+    background-color: rgb(231, 147, 161);
+    width: 30%;
+    height: 40em;
+    top: 30%;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+.btncl_data_admin{
+    width: 2em;
+    float: right;
+    border-radius: 5px;
+    margin: 3px;
+}
+.hide_form_admin{
+    transform: translateX(100rem);
+}
+.dsdko{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.danhsachol{
+    position: relative;
+}
+.dsdk_chil1{
+    margin: auto;
+    background-color: pink;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border:1px solid #6a6a6a;
+}
+
+.dsdk_chil2{
+    margin: auto;
+    background-color: pink;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border:1px solid #6a6a6a;
+
+}
+.dsdk_chil2 h6{
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #666;
+}
+
+
+.dsdk h5,.dsdk h6{
+    width: 14.2%;
+}
+
+@media only screen and (max-width : 700px){
+    .user_item{
+        width: 100%;
+    }
+}

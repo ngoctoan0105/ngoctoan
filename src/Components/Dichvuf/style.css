@@ -1,0 +1,89 @@
+.bannercf{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    box-sizing: border-box;
+}
+.img_banner_cf{
+    width: 100%;
+    height: 80vh;
+    
+}
+.img_hatcf{
+    width: 100%;
+    height: 2em;
+    position: relative;
+    display: block;
+    
+}
+.img_hatcf img{
+    width: 2em;
+    height: 2em;
+}
+.hatcf_left{
+    position: absolute;
+    left: 0;
+    animation-name: hatcfleft;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+.lycf{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    animation-name: lycf;
+    border-radius:50%;
+    animation-duration:6s;
+    animation-iteration-count: infinite;
+}
+.hatcf_right{
+    position: absolute;
+    right: 0;
+    animation-name: hatcfright;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hatcfleft {
+    0%{ left: 0;
+        
+    }
+    50%{
+        left: 90%;
+
+    }
+    100%{
+        left: 0;
+
+    }
+}
+@keyframes lycf {
+    0%{ transform: translateX(-50%);
+        box-shadow: 0px 0px 10px #000;
+    }
+    50%{
+        transform: translate(-50%,-10em);
+        box-shadow: 0px 167px 15px #000;
+    }
+    100%{
+        transform: translateX(-50%);
+        box-shadow: 0px 0px 10px #000;
+    }
+}
+@keyframes hatcfright {
+    0%{ right: 0;
+        
+    }
+    50%{
+        right: 90%;
+
+    }
+    100%{
+        right: 0;
+
+    }
+}
+a:hover{
+    text-decoration: none;
+}
