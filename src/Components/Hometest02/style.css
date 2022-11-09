@@ -66,7 +66,6 @@
 .button_banner a{
     position: relative;
     z-index: 7;
-    padding: 1em 2em 1em 2em;
     font-size: 20px;
     color: #fff;
     transition: 2s;

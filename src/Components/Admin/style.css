@@ -23,19 +23,14 @@
     font-weight: 700;
 }
 .hours_admin,.date_admin{
-    background-color: pink;
+    color: #e5e5e5;
     position: relative;
+    text-align: center;
     display: block;
-    width: 15%;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 8px 1em 8px 1em;
-    border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-.hours_admin{
-    width: 10%;
-}
+
 .hours_admin p, .date_admin p{
     font-weight:700;
     font-size: 2em;
@@ -65,13 +60,23 @@
 }
 .user_item{
     position: relative;
-    width: 20%;
+    width: 22%;
     background-color: #fff;
-    border-radius: 10px;
     border: 1px solid #e5e5e5;
     margin: 1em;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
+}
+.imgroom_item{
+    position: absolute;
+    width: 100%;
+   
+}
+
+.chil_user_item{
+    position: relative;
+    padding: 1em;
+    font-weight:600;
 }
 .trangthai_admin{
     position: absolute;
@@ -114,6 +119,7 @@
 }
 .danhsachol{
     position: relative;
+    padding-top: 3rem;
 }
 .dsdk_chil1{
     margin: auto;
@@ -149,4 +155,23 @@
     .user_item{
         width: 100%;
     }
+    .dsdk_chil1 h5{
+        font-size: 13px;
+    }
+    .dsdk_chil2 h6{
+        font-size: 10px;
+    }
+}
+.re_dsdk{
+    display: flex;
+    border: 1px solid #6a6a6a;
+    width: 300px;
+    background-color: pink;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.inf_dsdk{
+    display: flex;
+   
+   
 }

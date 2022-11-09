@@ -7,7 +7,7 @@ import imgLogo from '../img/logo.jpg'
 import imgBN from '../img/banner21.jpg'
 import "react-datepicker/dist/react-datepicker.css";
 import { useEffect, useMemo, useState } from 'react';
-import { Alert } from 'bootstrap';
+import imgITEM from '../img/room1.jpg'
 
 
 function Admin() {
@@ -102,9 +102,7 @@ function Admin() {
             <div className='title_quanly'>
              <img className='imgbn_admin' src={imgBN}/>
                 <img className='logo_admin' src={imgLogo} />
-
-                <h2 className='title_admin'>Quản lý phòng</h2>
-                <div className='hours_admin'><p>{hours}:{minu}</p></div><br />
+                 <div className='hours_admin'><p>{hours}:{minu}</p></div>
                 <div className='date_admin'><p>{date}/{month}/{year}</p></div>
             </div>
             <div className={!hideform ? "form_data_admin" : "hide_form_admin form_data_admin"}>
@@ -132,7 +130,7 @@ function Admin() {
             </div>
             <div className='danhsachol'>
                 <h4 className='dsdko'>DANH SÁCH KHÁCH HÀNG ĐĂNG KÝ ONLINE</h4>
-           
+                 
             <div className='dsdk'>
                 <div className='dsdk_chil1'>
                     <h5>TÊN</h5>
@@ -144,6 +142,7 @@ function Admin() {
                     <h5> </h5>
 
                 </div>
+                
              {user.map((a)=>{return(
                 <div className='dsdk_chil2' key={a.id}>
                     <h6>{a.name}</h6>
@@ -161,15 +160,18 @@ function Admin() {
                 {QQ.map((data) => {
                     return (
                         <div className='user_item' key={data.id}>
-                            <h3>PHÒNG:  {data.id}</h3>
-                            <h5>TÊN:  {data.name}</h5>
-                            <h5>CCCD:  {data.cccd}</h5>
-                            <h5>SĐT:  {data.sdt}</h5>
-                            <h5>GIÁ PHÒNG:  {data.gia}</h5>
-                            <h5>NGÀY VÀO:  {data.date}</h5>
+                            <img className='imgroom_item' src={imgITEM}/>
+                            <div className='chil_user_item'> 
+                             <div className='text_room_ad'>PHÒNG:   {data.id}</div> 
+                            <div className='text_room_ad'>TÊN:   {data.name}</div>
+                            <div className='text_room_ad'>CCCD:   {data.cccd}</div>
+                            <div className='text_room_ad'>SĐT:   {data.sdt}</div>
+                            <div className='text_room_ad'>GIÁ PHÒNG:   {data.gia}</div>
+                            <div className='text_room_ad'>NGÀY VÀO:   {data.date}</div>
                             <div className={data.trangthai !== 'Phòng Trống' ?'trangthai_admin2 trangthai_admin' : "trangthai_admin"} >{data.trangthai}</div>
                             <button className='btn_admin_check' style={{ float: 'left' }} onClick={() => { checkout(data.id,data.trangthai,data.gia) }}>Checkout</button>
                             <button className='btn_admin_check' style={{ float: 'right' }} onClick={()=>{checkin(data.id)}} >Checkin</button>
+                           </div>
                         </div>
                     )
                 })}

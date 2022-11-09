@@ -2,7 +2,6 @@
     width: 100%;
     height: auto;
     position: relative;
-    background-color: #fff;
     text-align: center;
     padding-top: 4em;
     
@@ -50,6 +49,9 @@
 @media only screen and (max-width: 700px){
     .phongnghi_item_chil{
         width: 100%;
+    }
+    .form_cus1{
+        transform: translateX(-300%);
     }
 }
 .button_showcustumer{
@@ -101,6 +103,7 @@
     top: 50%;
     border-radius: 10px;
     transform: translate(-50%,-50%);
+    left: 0px;
 }
 
 .form_cus1 h4,.form_cus1 h5{

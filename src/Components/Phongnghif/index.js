@@ -14,7 +14,6 @@ function Phongnghi() {
     const [room, setRoom] = useState([])
     const [showCustomer, setShowCustomer] = useState(false);
     const [user, setUser] = useState({ name: '', phone: '', cccd: '', date: '', idphong: '', gia: '' })
-    const [users, setUsers] = useState([])
     const [sophong, setSophong] = useState('1')
     const [giaphong, setgiaphong] = useState('')
     const fechRoom = () => {
@@ -70,9 +69,7 @@ function Phongnghi() {
 
     }
     var newDate = new Date()
-    var date = newDate.getDate();
-    var month = newDate.getMonth() + 1;
-    var year = newDate.getFullYear();
+    
 
 
     return (
