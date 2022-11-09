@@ -1,6 +1,6 @@
 import './style.css'
 import {FaTrash} from 'react-icons/fa'
-import {  getRoom } from '../API/api'
+import {  editroom, getRoom } from '../API/api'
 import { getUsers, deleteUser } from '../API2/api2';
 import { getQQ, editQQ } from '../API3/api3';
 import imgLogo from '../img/logo.jpg'
@@ -13,9 +13,7 @@ import imgITEM from '../img/room1.jpg'
 function Admin() {
     const [room, setRoom] = useState([])
     const [user, setUser] = useState([])
-    const [quanly, setQuanly] = useState([])
-    const [phongtrong, setphongtrong] = useState([])
-    const [QQ, setQQ] = useState([])
+     const [QQ, setQQ] = useState([])
     const [dataqq,setDataqq]=useState({name:'',sdt:'',cccd:'',date:'',trangthai:'Đang sử Dụng'})
     const [checkphong,setcheckphong] = useState('')
     const [hideform,setHideform]= useState(true)
@@ -61,12 +59,13 @@ function Admin() {
 
 
 
-    const checkout = (id,trangthai,gia) => {
+    const checkout = (id,trangthai) => {
         if(trangthai !== 'Phòng Trống'){
         const resetqq = { name: '', cccd: '', sdt: '', trangthai: 'Phòng Trống',date:'' }
         editQQ(id, resetqq).then((res) => {
             fechRoom()
         }).catch((erro) => { console.log(erro); })
+        
         alert('Check out thành công')}
         else{
             alert('Phòng đang trống')
