@@ -2,8 +2,8 @@ body{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-   background-color: #f5ebe0;
-}
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);}
+
 li{
     list-style: none;  
   
@@ -83,37 +83,20 @@ a{
 .datphong{
     border: 1px solid #d9d9d9;
     padding: 1em 2em 1em 2em;
-    border-radius: 10px;
     background-color: #f7c59f;
     animation-name: anidatphong;
     animation-duration: 3s;
     animation-iteration-count:infinite;
+    
 }
-.datphong:hover{
+.datphong a:hover{
     background-color: #fff;
-    counter-reset: black;
+    color: #000;
 }
 
 .button_menu a{
     color: black;
   
-}
-
-@keyframes anidatphong {
-    0%{
-        background-color: #ffb4a2;
-    }
-    30%{
-       
-        background-color: #bdb2ff;
-    }
-    70%{
-        background-color: #84a98c;
-    }
-    100%{
-       
-        background-color: #a2d2ff;        
-    }
 }
 #dichvu_ul{
     position: absolute;
@@ -189,6 +172,7 @@ a{
         height: auto;
         padding: 0px;
         overflow: initial;
+        background-color: #fed9b7;
         
    }
    .header #btn_hd:hover{

@@ -6,16 +6,21 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useEffect, useState } from 'react';
 import ListRoom from '../Listroom';
 import imgBia from '../img/banner21.jpg'
+import { click } from '@testing-library/user-event/dist/click';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 
 
 function Phongnghi() {
 
     const [room, setRoom] = useState([])
-    const [showCustomer, setShowCustomer] = useState(false);
     const [user, setUser] = useState({ name: '', phone: '', cccd: '', date: '', idphong: '', gia: '' })
     const [sophong, setSophong] = useState('1')
     const [giaphong, setgiaphong] = useState('')
+    const [checkBtn, setCheckBtn] = useState('all');
+    const [checkRoom, setCheckRoom] = useState([]);
+    const [show, setShow] = useState(false);
     const fechRoom = () => {
         getRoom().then((res) => {
             setRoom(res.data)
@@ -25,30 +30,35 @@ function Phongnghi() {
     useEffect(() => {
         fechRoom()
 
+
     }, [])
+
 
     const showformCustomer = (id, stt, gia) => {
         setSophong(id)
         setgiaphong(gia)
         if (stt === 'Phòng Trống') {
-            setShowCustomer(true)
+          
+            setShow(true);
+
         }
         else {
             alert('Phòng này đã có người dùng, quý khách vui lòng chọn phòng khác')
-            setShowCustomer(false)
+          
 
 
         }
 
     }
     const closeCust = () => {
-        setShowCustomer(false)
+        handleClose()
+      
         if (user.name !== '' && user.phone !== '' && user.cccd !== '' && user.date !== '') {
 
             createUser(user.name, user.phone, user.cccd, user.date, user.id, user.idphong, user.gia).then((res) => {
             }).catch((erro) => { console.log(erro); })
             setUser({ name: '', phone: '', cccd: '', date: '', id: '' })
-            alert('Đăng ký thành công.')
+            alert('Cảm ơn quý khách đã đặt phòng.Bộ phận tư vấn sẽ liên lạc với quý khách sớm nhất có thể')
             fechRoom()
         } else {
             alert('Quý khách vui lòng điền đầy đủ thông tin')
@@ -69,23 +79,62 @@ function Phongnghi() {
 
     }
     var newDate = new Date()
-    
 
+    const clickCheckBtn1 = () => {
+        setCheckBtn('all')
+        getRoom().then((res) => {
+            setRoom(res.data)
+        }).catch((erro) => { console.log(erro); })
+    }
+    const clickCheckBtn2 = () => {
+        setCheckBtn('vip')
+        getRoom().then((res) => {
+            const item = res.data;
+            const all = item.filter((i) => {
+                return i.gia == '1400000'
+            })
+            setRoom(all)
+            console.log(room);
+        }).catch((erro) => { console.log(erro); })
 
+    }
+
+    const clickCheckBtn3 = () => {
+        setCheckBtn('nomal')
+        getRoom().then((res) => {
+            const item = res.data;
+            const all = item.filter((i) => {
+                return i.gia == '1200000'
+            })
+            setRoom(all)
+            console.log(room);
+        }).catch((erro) => { console.log(erro); })
+    }
+    const clickCheckBtn4 = () => {
+        setCheckBtn('special')
+        getRoom().then((res) => {
+            const item = res.data;
+            const all = item.filter((i) => {
+                return i.gia == '1300000'
+            })
+            setRoom(all)
+            console.log(room);
+        }).catch((erro) => { console.log(erro); })
+    }
+
+    const handleClose = () => setShow(false);
+     
     return (
         <div>
             <div className='img_bia'><img className='img_bia2' src={imgBia}></img></div>
-            <div className={showCustomer ? 'phongnghiall show_form_custumer' : 'phongnghiall'}>
+            <div className='phongnghiall'>
 
-
-                <div className='parent_form_c' > <div className='form_cus1' >
-                    <div>
-                        <button className='close_formcustumer' onClick={closeCust} >X</button>
-                        <h4>NHẬP THÔNG TIN ĐỂ ĐẶT PHÒNG</h4>
-                        <h6>Số phòng: {sophong}</h6>
-
-                        <div className='form_cus2'>
-                            <form>
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>NHẬP THÔNG TIN ĐỂ ĐẶT PHÒNG</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                    <form>
                                 <div className="form-group">
                                     <label >Họ và Tên</label>
                                     <input name='name' value={user.name} type="text" className="form-control" onChange={onchange} placeholder="Họ và Tên" />
@@ -107,11 +156,20 @@ function Phongnghi() {
 
                                 </div>
 
-                                <button type='button' onClick={closeCust}>Đặt phòng</button>
-
-                            </form>
-                        </div>
-                    </div>
+                                
+                                </form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={closeCust}>
+                            Đóng
+                        </Button>
+                        <Button variant="primary" onClick={closeCust}>
+                            Đặt Phòng
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+                <div className='parent_form_c' > <div className='form_cus1' >
+                   
 
                 </div>
                 </div>
@@ -122,6 +180,14 @@ function Phongnghi() {
                     <div className='gcpnm'></div>
                     <div className='gcpn'></div>
                 </div>
+
+                <div className="btn-group py-4" role="group" aria-label="Basic outlined example">
+                    <button type="button" name='all' className={checkBtn == 'all' ? 'btn btn-outline-secondary active' : "btn btn-outline-secondary"} onClick={() => { clickCheckBtn1() }}>All</button>
+                    <button type="button" name='vip' className={checkBtn == 'vip' ? 'btn btn-outline-secondary active' : "btn btn-outline-secondary"} onClick={() => { clickCheckBtn2() }}>Vip</button>
+                    <button type="button" name='nomal' className={checkBtn == 'nomal' ? 'btn btn-outline-secondary active' : "btn btn-outline-secondary"} onClick={() => { clickCheckBtn3() }}>Nomal</button>
+                    <button type="button" name='special' className={checkBtn == 'special' ? 'btn btn-outline-secondary active' : "btn btn-outline-secondary"} onClick={() => { clickCheckBtn4() }}>Special</button>
+                </div>
+
 
                 <div className='phongnghi_item' >
                     {room.map((ed) => {

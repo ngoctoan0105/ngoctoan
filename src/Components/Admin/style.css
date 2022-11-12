@@ -70,7 +70,7 @@
 .imgroom_item{
     position: absolute;
     width: 100%;
-   
+    height: 100%;
 }
 
 .chil_user_item{
@@ -88,21 +88,11 @@
     color: red;
    
 }
-.btn_admin_check{
-    background-color: #489ceb;
-    margin: 5px;
-    border-radius: 10px;
-}
-.form_data_admin{
-    background-color: rgb(231, 147, 161);
-    width: 30%;
-    height: 40em;
-    top: 30%;
-    position: fixed;
-    z-index: 99;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 10px;
+
+.form_control{
+    width: 90%;
+    display: block;
+    margin: auto;
 }
 .btncl_data_admin{
     width: 2em;
@@ -110,9 +100,7 @@
     border-radius: 5px;
     margin: 3px;
 }
-.hide_form_admin{
-    transform: translateX(100rem);
-}
+
 .dsdko{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -123,7 +111,7 @@
 }
 .dsdk_chil1{
     margin: auto;
-    background-color: pink;
+    background-color: #e0e1dd;
     width: 90%;
     display: flex;
     justify-content: space-around;
@@ -133,7 +121,7 @@
 
 .dsdk_chil2{
     margin: auto;
-    background-color: pink;
+    background-color: #f1f3eb;
     width: 90%;
     display: flex;
     justify-content: space-around;
@@ -143,6 +131,7 @@
 }
 .dsdk_chil2 h6{
     font-family: 'Barlow Condensed', sans-serif;
+    margin: auto;
     color: #666;
 }
 
@@ -161,6 +150,7 @@
     .dsdk_chil2 h6{
         font-size: 10px;
     }
+   
 }
 .re_dsdk{
     display: flex;
