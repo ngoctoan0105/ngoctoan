@@ -14,6 +14,7 @@ import {FaWater} from 'react-icons/fa'
 import {FaMugHot} from 'react-icons/fa'
 import {useState } from 'react'
 import {FaPhone} from 'react-icons/fa'
+import { ModalBody } from "react-bootstrap";
 
 
 
@@ -46,7 +47,7 @@ function Header() {
       setScrollm(false)
     }
   }
- 
+  
   window.addEventListener('scroll',scrollmouse)
  
   return (

@@ -183,8 +183,8 @@ function Phongnghi() {
 
                 <div className="btn-group py-4" role="group" aria-label="Basic outlined example">
                     <button type="button" name='all' className={checkBtn == 'all' ? 'btn btn-outline-secondary active' : "btn btn-outline-secondary"} onClick={() => { clickCheckBtn1() }}>All</button>
-                    <button type="button" name='vip' className={checkBtn == 'vip' ? 'btn btn-outline-secondary active' : "btn btn-outline-secondary"} onClick={() => { clickCheckBtn2() }}>Vip</button>
                     <button type="button" name='nomal' className={checkBtn == 'nomal' ? 'btn btn-outline-secondary active' : "btn btn-outline-secondary"} onClick={() => { clickCheckBtn3() }}>Nomal</button>
+                    <button type="button" name='vip' className={checkBtn == 'vip' ? 'btn btn-outline-secondary active' : "btn btn-outline-secondary"} onClick={() => { clickCheckBtn2() }}>Vip</button>
                     <button type="button" name='special' className={checkBtn == 'special' ? 'btn btn-outline-secondary active' : "btn btn-outline-secondary"} onClick={() => { clickCheckBtn4() }}>Special</button>
                 </div>
 

@@ -123,3 +123,8 @@
         right: -4em;
     }
 }
+@media only screen and (max-width: 400px){
+    .text_listroom22{
+        right: -2em;
+    }
+}
