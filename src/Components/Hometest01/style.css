@@ -253,14 +253,34 @@ a{
 
 
 }   
+.managebg{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    bottom: 5vh;
+    right: 5vh;
+
+}
+.imgss{
+    height: 100%;
+    width: 100%;
+    animation-name: animanage;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: ease;
+    transition: 5s;
+}
 .manage_room{
     background-color: #bde0fe;
     border-radius: 10px;
-    height: 6vh;
-    position: fixed;
-    font-weight: 700;
-    bottom: 0;
-    right: 0;
+    height: 4em;
+    width: 4em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    clip-path: circle(50% at 50% 50%);
     color: #000;
 }
     
@@ -269,5 +289,25 @@ a{
     caret-color: #000;
 }
 .manage_room p{
-    margin-top: 2vh
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-weight: 600;
+   top: 50%;
+   left: 50%;
+   color: rgb(44, 43, 43);
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.manage_room p:hover{
+    color: #000;
+}
+@keyframes animanage {
+    0%{transform:rotate(0);
+       
+        
+    }
+    100%{transform: rotate(360deg);
+  }
 }

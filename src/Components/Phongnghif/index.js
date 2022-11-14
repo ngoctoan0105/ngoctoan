@@ -44,15 +44,12 @@ function Phongnghi() {
         }
         else {
             alert('Phòng này đã có người dùng, quý khách vui lòng chọn phòng khác')
-          
-
-
         }
 
     }
     const closeCust = () => {
         handleClose()
-      
+        
         if (user.name !== '' && user.phone !== '' && user.cccd !== '' && user.date !== '') {
 
             createUser(user.name, user.phone, user.cccd, user.date, user.id, user.idphong, user.gia).then((res) => {
@@ -128,7 +125,7 @@ function Phongnghi() {
         <div>
             <div className='img_bia'><img className='img_bia2' src={imgBia}></img></div>
             <div className='phongnghiall'>
-
+                
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>NHẬP THÔNG TIN ĐỂ ĐẶT PHÒNG</Modal.Title>
@@ -160,7 +157,7 @@ function Phongnghi() {
                                 </form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={closeCust}>
+                        <Button variant="secondary" onClick={handleClose}>
                             Đóng
                         </Button>
                         <Button variant="primary" onClick={closeCust}>
@@ -168,7 +165,8 @@ function Phongnghi() {
                         </Button>
                     </Modal.Footer>
                 </Modal>
-                <div className='parent_form_c' > <div className='form_cus1' >
+                <div className='parent_form_c' > 
+                <div className='form_cus1' >
                    
 
                 </div>
