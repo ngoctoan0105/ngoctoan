@@ -303,6 +303,17 @@ a{
 .manage_room p:hover{
     color: #000;
 }
+.notice_admin{
+    color: rgb(240, 100, 100);
+}
+.to_quanly{
+    color: #fff;
+    opacity: 0.8;
+}
+.to_quanly:hover{
+    color: #fff;
+    opacity: 1;
+}
 @keyframes animanage {
     0%{transform:rotate(0);
        
