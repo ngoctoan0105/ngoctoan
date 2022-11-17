@@ -5,11 +5,12 @@ import { getUsers, deleteUser } from '../API2/api2';
 import { getQQ, editQQ } from '../API3/api3';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import imgLogo from '../img/logo.jpg'
 import imgBN from '../img/banner21.jpg'
+import imgTW from '../img/teamw.jpg'
 import "react-datepicker/dist/react-datepicker.css";
 import { useEffect, useMemo, useState } from 'react';
 import imgITEM from '../img/room1.jpg'
+import { Alert } from 'bootstrap';
 
 
 
@@ -22,7 +23,10 @@ function Admin() {
     const [checkphong, setcheckphong] = useState('')
     const [hideform, setHideform] = useState(true)
     const [show, setShow] = useState(false);
-    const [show2, setShow2] = useState(false);
+    const [formAd,setFormad] = useState({tk:'',mk:''});
+    const [loginAdmin,setLoginadmin] = useState(false)
+    const [notiLogin,setNotilogin] = useState('')
+    const [notiLogin2,setNotilogin2] = useState('')
     var newDate = new Date()
     var date = newDate.getDate();
     var month = newDate.getMonth() + 1;
@@ -30,6 +34,7 @@ function Admin() {
     var hours = newDate.getHours();
     var minu = newDate.getMinutes();
 
+    const accadmin = {tk:'nt',mk:'123'}
     const fechRoom = () => {
         getRoom().then((res) => {
             setRoom(res.data)
@@ -58,12 +63,34 @@ function Admin() {
         )
 
     }
+    const onchangead = (e) => {
+        const name = e.target.name
+        const value = e.target.value
+        setFormad(
+            {
+                ...formAd,
+                [name]: value,
+
+            }
+        )
+        console.log(formAd);
+    }
     useEffect(() => {
         fechRoom()
 
 
     }, [])
-
+    const Checkformad = () => {
+        if (formAd.tk === accadmin.tk && formAd.mk === accadmin.mk){
+            setLoginadmin(true)
+            setNotilogin('')
+        }
+        else{
+            setNotilogin('Tài khoản hoặc mật khẩu không chính xác')
+            setNotilogin2('Tài khoản dự phòng: nt, Mật khẩu dự phòng: 123')
+        }
+        console.log(loginAdmin);
+    }
 
 
     const checkout = (id, trangthai) => {
@@ -113,30 +140,29 @@ function Admin() {
 
     return (
         <div>
-            {/* <Modal show={show2} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>ĐĂNG NHẬP</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="form-floating mb-3">
-              <label htmlFor="floatingInput">Tài Khoản</label>
-            <input type="text" className="form-control" name="account" value={loginAdmin.account} id="floatingInput" onChange={onchangefad} placeholder="Tài khoản"/>
-          </div>
-          <div className="form-floating">
-              <label htmlFor="floatingPassword">Mật khẩu</label>
-            <input type="password" className="form-control" name="password" value={loginAdmin.password} id="floatingPassword" onChange={onchangefad} placeholder="Mật khẩu"/>
-          </div>
-          <div className="notice_admin">{noticeadmin ? '' : 'Tài khoản hoặc mật khẩu không chính xác'}</div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-           Đóng
-          </Button>
-          <Button variant="primary" onClick={handleLogin}>
-          <a className="to_quanly" href={noticeadmin2 ? 'admin' : '#'} >Đăng Nhập</a>
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
+            <div className={loginAdmin ? 'hide_admin':'login_admin'}>
+                <div className='title_login_admin'><img className='img_teamw' src={imgTW}></img></div>
+                <div className='login_admin_form'>
+                <form className='login_admin_formi'>
+                       
+                        <h2>Đăng Nhập</h2>
+                        <hr></hr>
+                        <div className="form-group">
+                            <label >Tài khoản</label>
+                            <input name='tk' value={formAd.tk} type="text" className="form_control" onChange={onchangead} placeholder="Tài khoản" />
+                        </div>
+                        <div className="form-group">
+                            <label >Mật khẩu</label>
+                            <input name='mk' value={formAd.mk} type="password" className="form_control" onChange={onchangead} placeholder="Mật khẩu" />
+                        </div>
+                        <h6 style={{color:"red"}}>{notiLogin}</h6>
+                        <h6 style={{color:"#6a6a6a"}}>{notiLogin2}</h6>
+                        <br/>
+                        <button type='button' className='btn btn-light' onClick={Checkformad} >Đăng nhập</button>
+                    </form>
+                </div>
+            </div>
+            <div className={loginAdmin ? 'all_admin' : 'hide_admin'}>
             <Modal show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>CHECKIN</Modal.Title>
@@ -174,7 +200,6 @@ function Admin() {
             </Modal>
             <div className='title_quanly'>
                 <img className='imgbn_admin' src={imgBN} />
-                <img className='logo_admin' src={imgLogo} />
                 <div className='hours_admin'><p>{hours}:{minu}</p></div>
                 <div className='date_admin'><p>{date}/{month}/{year}</p></div>
             </div>
@@ -230,6 +255,7 @@ function Admin() {
                     )
                 })}
             </div>
+        </div>
         </div>
     )
 }
